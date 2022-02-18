@@ -21,6 +21,13 @@ For each different ways of creating object write different solutions.
 - Write test by creating two objects also test both methods.
 
 ### To test use the following data
+```js
+
+
+
+```
+
+
 
 ```js
 const testData = {
