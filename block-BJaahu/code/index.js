@@ -1,10 +1,10 @@
 //Prototypal pattern 
 let bookMethod={
-    isAnswerIndex(index){
-        return index===bookDesign.correctAnswerIndex;
+    isAnswerIndex:function (index){
+        return index===this.correctAnswerIndex;
     },
-     getCorrectAnswer(correctAnswerIndex){
-        return bookDesign.option[correctAnswerIndex]
+     getCorrectAnswer:function(){
+        return this.option[this.correctAnswerIndex]
     },
     
 }
@@ -30,10 +30,10 @@ function bookDesign(title,option,correctAnswerIndex){
 
     bookDesign.prototype={
         isAnswerIndex:function(index){
-            return index=== correctAnswerIndex
+            return index=== this.correctAnswerIndex
         },
-        getCorrectAnswer:function(correctAnswerIndex){
-            return  bookDesign.option[correctAnswerIndex]
+        getCorrectAnswer:function(){
+            return  this.option[this.correctAnswerIndex]
         }
     }
 
