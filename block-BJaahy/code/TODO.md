@@ -3,9 +3,9 @@
 - Create a class named `Square` which accepts one parameter `side` and will set two property `width` and `height` to the value of `side`.
 ```js
 class Square{
-constructor(width,height){
-    this.width=width;
-    this.height=height;
+constructor(side){
+    this.width=side;
+    this.height=side;
 }
 
 }
@@ -14,15 +14,15 @@ constructor(width,height){
 
 ```
 
-
-
 - Add a method named `description` that will alert a message saying `The square is ${width} x ${height}`
 ```js
 class Square{
-constructor(width,height){
-    this.width=width;
-    this.height=height;
+constructor(side){
+    this.width=side;
+    this.height=side;
 }
+
+
 
      description(){
          alert `The square is ${this.width}* ${this.height}`
@@ -36,16 +36,18 @@ constructor(width,height){
 
 ```js
 class Square{
-constructor(width,height){
-    this.width=width;
-    this.height=height;
+constructor(side){
+    this.width=side;
+    this.height=side;
 }
+
+
 
      description(){
          alert `The square is ${this.width}* ${this.height}`
      }
-     calArea(){
-         return ` ${this.width}* ${this.height} `
+     calsArea(){
+         return this.width*this.height;
      }
 
 }
@@ -56,22 +58,27 @@ constructor(width,height){
 
 ```js
 class Square{
-constructor(width,height){
-    this.width=width;
-    this.height=height;
+constructor(side){
+    this.width=side;
+    this.height=side;
 }
+
+
 
      description(){
          alert `The square is ${this.width}* ${this.height}`
      }
+     calsArea(){
+         return this.width*this.height;
+     }
      get area(){
-         return ` ${this.width * this.height} `
+         return this.width* this.height
      }
 
 }
 
 
-let Sq= Square(4,10)
+let Sq= Square(4)
 Sq.area()
 ```
 
@@ -82,22 +89,32 @@ Sq.area()
 
 ```js
 class Square{
-constructor(width,height){
-    this.width=width;
-    this.height=height;
+constructor(side){
+    this.width=side;
+    this.height=side;
 }
 
-     set area(value){
-         alert `The square is ${this.value* this.value}`
+
+
+     description(){
+         alert `The square is ${this.width}* ${this.height}`
+     }
+     calsArea(){
+         return this.width*this.height;
      }
      get area(){
-         return ` ${this.width * this.height} `
+         return this.width* this.height
      }
 
+    set area(value){
+        let side=Math.sqrt(value);
+        this.width=side;
+        this.height=side;
+    }
 }
 
 
-let Sq= Square(4,10)
+let Sq= Square(4)
 Sq.area()
 ```
 
@@ -105,26 +122,32 @@ Sq.area()
 
 ```js
 class Square{
-constructor(width,height){
-    this.width=width;
-    this.height=height;
+constructor(side){
+    this.width=side;
+    this.height=side;
 }
-
-
-    static isEqual(){
-
-    }
-     set area(value){
-         alert `The square is ${this.value* this.value}`
+     description(){
+         alert `The square is ${this.width}* ${this.height}`
+     }
+     calsArea(){
+         return this.width*this.height;
      }
      get area(){
-         return ` ${this.width * this.height} `
+         return this.width* this.height
      }
 
+    set area(value){
+        let side=Math.sqrt(value);
+        this.width=side;
+        this.height=side;
+    }
+    static isEqual(a,b){
+        return (a.width * a.height) === (b.width * b.height)
+    }
 }
 
 
-let Sq= Square(4,10)
+let Sq= Square(4)
 Sq.area()
 
 
@@ -133,6 +156,8 @@ Sq.area()
 
 
 - Create two instance of the `Square` class (ex: `let s1 = new Square(6);`)
+
+
 
 - Check the `area` getter method on both square.
 
@@ -174,9 +199,68 @@ class User{
 
 - Create a `fullName` setter method that will accept full name parameter of the person. It will update the `firstName` and `lastName` based on the input. (Say if the user passed `Arya Stark` it will update the `firstName` to `Arya` and `lastName` to `Stark`. It will also change one condition if the length of the name passed is less than 5 characters it will alert a message saying `Full name should be more than 5 characters`)
 
+```js
+class User{
+    constructor(firstName,lastName){
+        this.firstName=firstName;
+        this.lastName=lastName
+    }
+
+    get fullName(){
+        return `${this.firstName+" "+this.lastName}`
+    }
+
+    set fullName(name){
+        if(name.length<5){
+            alert(`Full name should be more than 5 characters`)
+        }else{
+        let firstName=name.split(' ')[0];
+        let lastName=name.split(' ')[1];
+        this.firstName=firstName;
+        this.lastName=lastName;
+    }
+    }
+}
+
+
+
+
+```
+
 - Create a method named `nameContains` which will accept string and will return `true` or `false` based on if the name of the user contains the text that passed by user.
 
+
+```js
+class User{
+    constructor(firstName,lastName){
+        this.firstName=firstName;
+        this.lastName=lastName
+    }
+
+    get fullName(){
+        return `${this.firstName+" "+this.lastName}`
+    }
+
+    set fullName(name){
+        if(name.length<5){
+            alert(`Full name should be more than 5 characters`)
+        }else{
+        let firstName=name.split(' ')[0];
+        let lastName=name.split(' ')[1];
+        this.firstName=firstName;
+        this.lastName=lastName;
+    }
+    }
+    nameContains(string){
+        return `${this.firstName} ${this.lastName}`.includes(string)
+    }
+}
+
+
+```
+
 - Create two instance of the `User` class
+
 
 - Check by using the `fullName` setter method with name bigger than 5 characters.
 
