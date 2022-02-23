@@ -13,6 +13,48 @@ Queue
 Data:
 
 - `stack`
+```js
+class Stack {
+ constructor() {
+   this.stack = [];
+ }
+ push(value) {
+    this.stack.push(value);
+ }
+ pop(){
+     return this.stack.pop()
+ }
+ peek(value){
+     if(this.stack==value){
+         return this.stack;
+     }
+     else{
+         return this.stack[length-1]
+     }
+ }
+ reverse(){
+     return this.stack.reverse()
+ }
+ isEmpty(){
+     if(this.stack.length===0){
+         return `true`
+     }
+     else{
+         return `false`
+     }
+ }
+ displayStack(){
+     return String(this.stack)
+ }
+ get length(){
+     return this.stack.length
+ }
+
+}
+
+
+
+```
 
 Methods:
 
@@ -51,6 +93,48 @@ console.log(myStack.isEmpty()); // true
 Data:
 
 - `queue`
+
+```js
+class Queue {
+ constructor() {
+   this.queue = [];
+ }
+ enqueue(value) {
+    this.queue.push(value);
+ }
+ dequeue(){
+     return this.queue.shift()
+ }
+ peek(value){
+     if(this.queue==value){
+         return this.queue;
+     }
+     else{
+         return this.queue[length-1]
+     }
+ }
+
+ isEmpty(){
+     if(this.queue.length===0){
+         return `true`
+     }
+     else{
+         return `false`
+     }
+ }
+ displayQueue(){
+     return String(this.queue)
+ }
+ get length(){
+     return this.queue.length
+ }
+
+}
+
+
+
+```
+
 
 Methods:
 
