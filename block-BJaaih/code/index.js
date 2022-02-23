@@ -5,6 +5,20 @@
 
 // myMap function goes here
 
+
+
+map.prototype={
+  myMap:function(arr){
+    return num * 2 - 1;
+  }
+}
+
+function map(arr){
+  let arrobj=Object.create(map.prototype)
+  arrobj.arr=arr;
+  return arrobj
+}
+
 // Test the myMap function you created above
 
 let numbers = [1, 5, 6, 8, 9];
