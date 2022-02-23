@@ -1,7 +1,25 @@
 ## An object-oriented book-list!
 
 - [ ] Create a class BookList
+
 - [ ] Create another class called Book
+```js
+    class Book{
+        constructor(title,category,author,isRead="false",finishedDate){
+            this.title=title;
+            this.category=category;
+            this.isRead=isRead;
+            this.finishedDate=finishedDate;
+        }
+        marksBookAsRead(){
+        return !this.isRead;   
+        }
+        finishedDate(ab){
+            return  Date.now(ab)
+        }
+    }
+
+```
 
 #### Each Book should have several properties:
 
@@ -20,7 +38,34 @@ Book class will have the following methods:
 1. An array of all the Books
 2. Current read book index
 
+```js
+    class BookList extends Book{
+        constructor(title,category,author,isRead="false",finishedDate,arr,index){
+            super(title,category,author,isRead="false",finishedDate)
+            this.arr=arr;
+            this.index=index;
+        }
+    add(book){
+         newbook=this.arr.concat(book);
+         this.arr=newbook;
+         return newbook
+    }
+    getCurrentBook(){
+        return this.arr;
+    }
+    getNextBook(){
+         return this.arr[this.arr.length-1];
+    }
+    getprevBook(){
+        return this.arr;
+    }
+    }
+
+
+```
+
 #### BookList Methods
+
 
 - [] `add([Book])` will accept an array (list of books). Once the method is called the book will added to the list.
 - [] `getCurrentBook()` should return the current book using the `index` and the book array
