@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/stylesheet/style.css">
+    <script src="https://kit.fontawesome.com/cbd72baf56.js" crossorigin="anonymous"></script>
+    <title>Book-List</title>
+</head>
+<body>
+    <header><i class="fas fa-book-open"></i>My <span class="book"> Book</span> List</header>
+    <main class="container">
+        <form action="">
+        <label for="title">Title <br>
+            <input type="text" id="title">
+        </label><br>
+        
+        <label for="author">Author <br>
+            <input type="text" id="author">
+        </label><br>
+        <label for="isbn">ISBN# <br>
+            <input type="text" id="isbn">
+        </label>
+        <button  type="submit">Add Book</button>
+
+        </form>
+        <div class="flex">
+            <span>Title</span>
+            <span>Author</span>
+            <span>ISBN#</span>
+            <span></span>
+        </div>
+        <ul class="Book"></ul>
+    </main>
+    
+
+<script src="./index.js"></script>
+</body>
+</html>
